@@ -1,0 +1,83 @@
+/*
+Imports
+---------------------------------------------------------------------- */
+
+@import "compass";
+@import "compass/reset";
+
+/*
+Vars
+---------------------------------------------------------------------- */
+
+
+$light-grey-border: #cddae6;
+
+
+$thin-font: "Clear Sans Thin";
+$thin-font-file-name: "ClearSans-Thin";
+$light-font: "Clear Sans Light";
+$lightfont-file-name: "ClearSans-Light";
+$regular-font: "Clear Sans Regular";
+$regularfont-file-name: "ClearSans-Regular";
+$bold-font: "Clear Sans Bold";
+$boldfont-file-name: "ClearSans-Bold";
+
+
+/*
+Mixins
+---------------------------------------------------------------------- */
+
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url("../font/#{$font-filename}.woff");
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+  }
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin shadow {
+  box-shadow: $shadow-distance $shadow-distance 0 0 $shadow-color;
+}
+
+/*
+Includes
+---------------------------------------------------------------------- */
+
+@include declare-font-face($regular-font, $regularfont-file-name);
+@include declare-font-face($light-font, $lightfont-file-name);
+@include declare-font-face($thin-font, $thin-font-file-name);
+@include declare-font-face($bold-font, $boldfont-file-name);
+
+/*
+Elements
+---------------------------------------------------------------------- */
+
+/*   ===   TYPOGRAPHY
+===============================   */
+
+.regular-font {
+  font-family: $regular-font;
+}
+
+.thin-font {
+  font-family: $thin-font;
+}
+
+.light-font {
+  font-family: $light-font;
+}
+
+.bold-font {
+  font-family: $bold-font;
+}
+
+/*   ===   GLOBALS   
+===============================   */
